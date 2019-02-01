@@ -1,4 +1,4 @@
-const PHP_URL = "http://dmentor.id/backend/scripts/";
+const PHP_URL = "http://dmentor.id/ddt/scripts/";
 var lecturers = {};
 var courseIndex = -1;
 var courseName = "";
@@ -206,7 +206,7 @@ $(document).ready(function () {
                 cache: false,
                 success: function (a) {
                     var imgFileName = a;
-                    babImgURL = "http://dmentor.id/backend/userdata/imgs/" + imgFileName;
+                    babImgURL = "http://dmentor.id/ddt/userdata/imgs/" + imgFileName;
                     document.getElementById("bab-img").src = babImgURL;
                 },
                 error: function (a, b, c) {
@@ -328,7 +328,7 @@ function loadSettings() {
     $("#db-form").css("margin-top", "20px");
     $.ajax({
         type: 'GET',
-        url: "http://dmentor.id/backend/systemdata/settings.xml",
+        url: "http://dmentor.id/ddt/systemdata/settings.xml",
         dataType: 'text',
         cache: false,
         success: function (a) {
@@ -582,7 +582,7 @@ function setViewScoresLinkListener() {
         var userId = user["id"];
         $.ajax({
             type: 'GET',
-            url: 'http://dmentor.id/backend/scripts/get-scores.php',
+            url: 'http://dmentor.id/ddt/scripts/get-scores.php',
             data: {'user-id': userId},
             dataType: 'text',
             cache: false,
@@ -1271,7 +1271,7 @@ function getQuestions() {
                     var divExpandCourseImgCtr = document.createElement("div");
                     divExpandCourseImgCtr.setAttribute("class", "expand-img-ctr");
                     var divExpandCourseImg = document.createElement("img");
-                    divExpandCourseImg.src = "http://dmentor.id/backend/img/expand.png";
+                    divExpandCourseImg.src = "http://dmentor.id/ddt/img/expand.png";
                     divExpandCourseImg.setAttribute("width", "10px");
                     divExpandCourseImg.setAttribute("height", "10px");
                     divExpandCourseImgCtr.appendChild(divExpandCourseImg);
@@ -1292,7 +1292,7 @@ function getQuestions() {
                         var divExpandBabImgCtr = document.createElement("div");
                         divExpandBabImgCtr.setAttribute("class", "expand-img-ctr");
                         var divExpandBabImg = document.createElement("img");
-                        divExpandBabImg.src = "http://dmentor.id/backend/img/expand.png";
+                        divExpandBabImg.src = "http://dmentor.id/ddt/img/expand.png";
                         divExpandBabImg.setAttribute("width", "10px");
                         divExpandBabImg.setAttribute("height", "10px");
                         divExpandBabImgCtr.appendChild(divExpandBabImg);
@@ -1548,15 +1548,15 @@ function editQuestion(btnEditQuestion) {
         var audioFileName = "";
         if (pictureFile != null) {
             imgFileName = guid();
-            pictureURL = "http://dmentor.id/backend/userdata/imgs/"+imgFileName;
+            pictureURL = "http://dmentor.id/ddt/userdata/imgs/"+imgFileName;
         }
         if (videoFile != null) {
             videoFileName = guid();
-            videoURL = "http://dmentor.id/backend/userdata/videos/"+videoFileName;
+            videoURL = "http://dmentor.id/ddt/userdata/videos/"+videoFileName;
         }
         if (audioFile != null) {
             audioFileName = guid();
-            audioURL = "http://dmentor.id/backend/userdata/audios/"+audioFileName;
+            audioURL = "http://dmentor.id/ddt/userdata/audios/"+audioFileName;
         }
         if (imgFileName != '') {
             var fd4 = new FormData();
@@ -1806,7 +1806,7 @@ function addQuestion() {
     imageData = "";
     audioData = "";
     videoData = "";
-    $("#fill-question-img").css("backgroundImage", "http://dmentor.id/backend/img/bab-placeholder.jpg");
+    $("#fill-question-img").css("backgroundImage", "http://dmentor.id/ddt/img/bab-placeholder.jpg");
     $("#fill-question-video-source").attr("src", "");
     $("#fill-question-video")[0].load();
     $("#fill-question-audio-source").attr("src", "");
@@ -1889,7 +1889,7 @@ function addQuestion() {
     var videoURL = "";
     var audioURL = "";
     if (imageData != '') {
-        imageURL = "http://dmentor.id/backend/userdata/imgs/" + imageID;
+        imageURL = "http://dmentor.id/ddt/userdata/imgs/" + imageID;
         var fd2 = new FormData();
         fd2.append("id", imageID);
         fd2.append("img_data", imageData);
@@ -1911,7 +1911,7 @@ function addQuestion() {
         });
     }
     if (videoData != '') {
-        videoURL = "http://dmentor.id/backend/userdata/videos/" + videoID;
+        videoURL = "http://dmentor.id/ddt/userdata/videos/" + videoID;
         var fd3 = new FormData();
         fd3.append("id", videoID);
         fd3.append("video_data", videoData);
@@ -1933,7 +1933,7 @@ function addQuestion() {
         });
     }
     if (audioData != '') {
-        audioURL = "http://dmentor.id/backend/userdata/audios/" + audioID;
+        audioURL = "http://dmentor.id/ddt/userdata/audios/" + audioID;
         var fd4 = new FormData();
         fd4.append("id", audioID);
         fd4.append("audio_data", audioData);
@@ -2072,7 +2072,7 @@ function fillQuestion() {
     var videoURL = "";
     var audioURL = "";
     if (imageData != '') {
-        imageURL = "http://dmentor.id/backend/userdata/imgs/" + imageID;
+        imageURL = "http://dmentor.id/ddt/userdata/imgs/" + imageID;
         var fd2 = new FormData();
         fd2.append("id", imageID);
         fd2.append("img_file", fillQuestionImageFile);
@@ -2096,7 +2096,7 @@ function fillQuestion() {
         });
     }
     if (videoData != '') {
-        videoURL = "http://dmentor.id/backend/userdata/videos/" + videoID;
+        videoURL = "http://dmentor.id/ddt/userdata/videos/" + videoID;
         var fd3 = new FormData();
         fd3.append("id", videoID);
         fd3.append("video_data", videoData);
@@ -2118,7 +2118,7 @@ function fillQuestion() {
         });
     }
     if (audioData != '') {
-        audioURL = "http://dmentor.id/backend/userdata/audios/" + audioID;
+        audioURL = "http://dmentor.id/ddt/userdata/audios/" + audioID;
         var fd4 = new FormData();
         fd4.append("id", audioID);
         fd4.append("audio_data", audioData);
@@ -2201,7 +2201,7 @@ function loadBabs(courseName) {
                     div.setAttribute("style", "cursor: pointer;");
                     var img = document.createElement("img");
                     if (bab.img_url == '') {
-                        img.src = "http://dmentor.id/backend/img/bab-placeholder.jpg";
+                        img.src = "http://dmentor.id/ddt/img/bab-placeholder.jpg";
                     } else {
                         img.src = bab.img_url;
                     }
@@ -2332,7 +2332,7 @@ function addBab(name0, questionsCount, imgURL) {
     if (imgURL !== '') {
         img.src = imgURL;
     } else {
-        img.src = "http://dmentor.id/backend/img/bab-placeholder.jpg";
+        img.src = "http://dmentor.id/ddt/img/bab-placeholder.jpg";
     }
     img.setAttribute("width", "100%");
     img.setAttribute("height", "150px");
@@ -2400,7 +2400,7 @@ function getDaftarBab() {
                     if (bab.img_url !== '') {
                         img.src = bab.img_url;
                     } else {
-                        img.src = "http://dmentor.id/backend/img/bab-placeholder.jpg";
+                        img.src = "http://dmentor.id/ddt/img/bab-placeholder.jpg";
                     }
                     img.setAttribute("width", "100%");
                     img.setAttribute("height", "150px");

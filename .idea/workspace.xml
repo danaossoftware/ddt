@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79006d3b-91af-4c8d-8df4-be369a0b4e3e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/systemdata/settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/systemdata/settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/home-backup.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/home-backup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/home.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,18 +47,22 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/systemdata/settings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+            <state relative-caret-position="408">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/get-bab.php">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -223,9 +230,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>isian</find>
-      <find>index</find>
-      <find>alert</find>
       <find>function editq</find>
       <find>questiontype</find>
       <find>splitt</find>
@@ -253,10 +257,11 @@
       <find>add-bab-dialog</find>
       <find>$response</find>
       <find>get-questions.php</find>
+      <find>localhost</find>
+      <find>ilatih.com</find>
+      <find>dmentor.id/backend</find>
     </findStrings>
     <replaceStrings>
-      <replace>edit-question-change-media</replace>
-      <replace>editQuestionMediaData</replace>
       <replace>mediaFile</replace>
       <replace>mediaFileName</replace>
       <replace>edit-admin-btn</replace>
@@ -285,10 +290,13 @@
       <replace>$(&quot;#add-bab-dialog&quot;).css(&quot;height&quot;, &quot;300px&quot;);</replace>
       <replace>$(&quot;#add-bab-dialog&quot;).css(&quot;height&quot;, &quot;390px&quot;);</replace>
       <replace>$(&quot;#add-bab-dialog&quot;).css(&quot;height&quot;, &quot;360px&quot;);</replace>
+      <replace>dmentor.id</replace>
+      <replace>dmentor.id/ddt</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\Dana\Documents\WebFiles\backend\scripts</dir>
       <dir>C:\Users\Dana\Documents\WebFiles\backend</dir>
+      <dir>C:\Users\Dana\Documents\WebFiles\ddt - backend</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -319,7 +327,6 @@
         <option value="$PROJECT_DIR$/questions.html" />
         <option value="$PROJECT_DIR$/scripts/logout.php" />
         <option value="$PROJECT_DIR$/scripts/get-session.php" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/bab.html" />
         <option value="$PROJECT_DIR$/scripts/upload-video-with-id.php" />
         <option value="$PROJECT_DIR$/scripts/upload-audio-with-id.php" />
@@ -348,6 +355,7 @@
         <option value="$PROJECT_DIR$/scripts/get-questions.php" />
         <option value="$PROJECT_DIR$/scripts/home.js" />
         <option value="$PROJECT_DIR$/systemdata/settings.xml" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -466,12 +474,12 @@
       <workItem from="1547804087907" duration="1224000" />
       <workItem from="1547805820513" duration="486000" />
       <workItem from="1548069379031" duration="2314000" />
-      <workItem from="1549044603937" duration="707000" />
+      <workItem from="1549044603937" duration="972000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="269822000" />
+    <option name="totallyTimeSpent" value="270087000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -705,13 +713,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -989,8 +990,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/systemdata/settings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        <state relative-caret-position="408">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
         </state>
       </provider>
     </entry>
