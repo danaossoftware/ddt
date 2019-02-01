@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<settings>
+    <mysql>
+        <website>dmentor.id</website>
+        <host>localhost</host>
+        <port>80</port>
+        <dbuser>u554752604_admin</dbuser>
+        <dbpass>HelloWorld123</dbpass>
+        <dbname>u554752604_ddt</dbname>
+    </mysql>
+    <admin>
+        <email>ligaligo12346@gmail.com</email>
+		<phone>081123456789</phone>
+		<address>Jl. Durensalak No. 30 Jakarta</address>
+    </admin>
+    <rules>Ini adalah peraturan@Ini adalah peraturan 2@Ini adalah peraturan 3@Ini adalah peraturan 4@Ini adalah peraturan 5@Ini adalah peraturan 6@Ini adalah peraturan 7@Ini adalah peraturan 8</rules>
+	<links>
+		<facebook>http://www.facebook.com/myUser1</facebook>
+		<twitter>http://www.twitter.com/myUser2</twitter>
+		<googlePlus>http://plus.google.com/users/myUser4</googlePlus>
+		<linkedIn>http://www.linked.in/users/myUser5</linkedIn>
+		<instagram>http://www.instagram.com/myUser3</instagram>
+	</links>
+</settings>
