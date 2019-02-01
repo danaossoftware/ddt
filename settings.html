@@ -1,0 +1,81 @@
+<div class="header">
+    <div style="font-family: 'PalanquinBold', Arial; font-size: 23px; margin-left: 25px; padding-top: 10px;">Pengaturan
+    </div>
+    <div style="font-size: 13px; margin-left: 25px; margin-top: -7px;">Mengatur MySQL host, email admin atau ekspor database
+    </div>
+    <div style="width: 100%; height: 100%; position: absolute; top: 0; right: 0; display: flex; align-items: center; justify-content: flex-end;">
+        <!--<img width="15px" height="15px" style="margin-right: 5px;" id="options" src="img/options.png">
+        <div style="margin-right: 10px;" id="name">Sistem</div>-->
+        <img class="profile-picture" src="img/profile_picture.png" width="40px" height="40px" style="cursor: pointer; margin-right: 25px;">
+    </div>
+    <div class="account-panel">
+        <div id="account-email"><div style="font-family: 'PalanquinBold', Arial; line-height: 14px;">Email:</div>ligaligo12346@gmail.com</div>
+        <div style="position: absolute; right: 0;">
+            <div class="log-out flat-button">LOGOUT</div>
+        </div>
+    </div>
+</div>
+<div id="settings-saved" style="display: none; margin-left: 20px; margin-top: 5px; padding-left: 10px; padding-top: 8px; padding-bottom: 8px; border: 1px solid #c2ebbc; margin-right: 20px; margin-top: 10px; background-color: #ddf5d3; border-radius: 4px; font-family: 'PalanquinBold', Arial; font-size: 14px; color: #346543;">
+    Pengaturan berhasil disimpan. Mohon refresh halaman.
+</div>
+<!-- DATABASE -->
+<div class="card" id="db-form"
+     style="display: flex; flex-flow: column wrap; justify-content: flex-start; align-items: flex-start; align-content: center; position: relative; margin-left: 20px; margin-top: 20px; margin-bottom: 20px; margin-right: 20px; overflow: hidden;">
+    <div style="width: 100%; margin-left: 30px; margin-top: 10px;">
+        <div style="font-family: 'PalanquinBold', Arial; font-size: 16px;">Website</div>
+    </div>
+    <div class="separator" style="margin-left: 15px; margin-top: 10px;">&nbsp;</div>
+    <!-- WEBSITE -->
+    <div style="position: relative; display: flex; justify-content: flex-start; align-items: center; align-content: center; width: 100%; padding-left: 20px; padding-top: 10px; padding-bottom: 10px;">
+        <div style="font-family: 'PalanquinBold', Arial; font-size: 13px; margin-left: 20px; margin-top: 5px;">Website :</div>
+        <input class="input1" type="text" name="website" id="website" style="z-index: 1; position: absolute; left: 0; top: 0; width: 50%; margin-left: 200px; margin-top: 10px; font-family: 'PalanquinRegular', Arial;">
+    </div>
+    <!-- PORT -->
+    <!--<div style="position: relative; display: flex; justify-content: flex-start; align-items: center; align-content: center; width: 100%; padding-left: 20px; padding-top: 10px; padding-bottom: 10px;">
+        <div style="font-family: 'PalanquinBold', Arial; font-size: 13px; margin-left: 20px; margin-top: 5px;">Port server MySQL :</div>
+        <input class="input1" type="text" name="mysql-port" id="mysql-port" style="z-index: 1; position: absolute; left: 0; top: 0; width: 50%; margin-left: 200px; margin-top: 10px; font-family: 'PalanquinRegular', Arial;">
+    </div>-->
+    <!-- DB USER -->
+    <div style="position: relative; display: flex; justify-content: flex-start; align-items: center; align-content: center; width: 100%; padding-left: 20px; padding-top: 10px; padding-bottom: 10px;">
+        <div style="font-family: 'PalanquinBold', Arial; font-size: 13px; margin-left: 20px; margin-top: 5px;">Nama user database :</div>
+        <input class="input1" type="text" name="db-user" id="db-user" style="z-index: 1; position: absolute; left: 0; top: 0; width: 50%; margin-left: 200px; margin-top: 10px; font-family: 'PalanquinRegular', Arial;">
+    </div>
+    <!-- DB PASS -->
+    <div style="position: relative; display: flex; justify-content: flex-start; align-items: center; align-content: center; width: 100%; padding-left: 20px; padding-top: 10px; padding-bottom: 10px;">
+        <div style="font-family: 'PalanquinBold', Arial; font-size: 13px; margin-left: 20px; margin-top: 5px;">Kata sandi database :</div>
+        <input class="input1" type="password" name="db-pass" id="db-password" style="z-index: 1; position: absolute; left: 0; top: 0; width: 50%; margin-left: 200px; margin-top: 10px; font-family: 'PalanquinRegular', Arial;">
+    </div>
+    <!-- DB NAME -->
+    <div style="position: relative; display: flex; justify-content: flex-start; align-items: center; align-content: center; width: 100%; padding-left: 20px; padding-top: 10px; padding-bottom: 10px;">
+        <div style="font-family: 'PalanquinBold', Arial; font-size: 13px; margin-left: 20px; margin-top: 5px;">Nama database :</div>
+        <input class="input1" type="text" name="db-name" id="db-name" style="z-index: 1; position: absolute; left: 0; top: 0; width: 50%; margin-left: 200px; margin-top: 10px; font-family: 'PalanquinRegular', Arial;">
+    </div>
+    <button class="red-button" style="margin-left: 200px; margin-top: 5px; margin-bottom: 20px; width: 200px;">Ekspor Database</button>
+</div>
+<!-- ADMIN -->
+<div class="card"
+     style="display: flex; flex-flow: column wrap; justify-content: flex-start; align-items: flex-start; align-content: center; position: relative; margin-left: 20px; margin-top: 20px; margin-bottom: 20px; margin-right: 20px; overflow: hidden;">
+    <div style="width: 100%; margin-left: 30px; margin-top: 10px;">
+        <div style="font-family: 'PalanquinBold', Arial; font-size: 16px;">Admin</div>
+    </div>
+    <div class="separator" style="margin-left: 15px; margin-top: 10px;">&nbsp;</div>
+    <div style="position: relative; display: flex; justify-content: flex-start; align-items: center; align-content: center; width: 100%; padding-left: 20px; padding-top: 10px; padding-bottom: 3px;">
+        <div style="font-family: 'PalanquinBold', Arial; font-size: 13px; margin-left: 20px; margin-top: 5px;">Email admin :</div>
+        <input class="input1" type="text" name="mysql-host" id="admin-email" style="z-index: 1; position: absolute; left: 0; top: 0; width: 50%; margin-left: 200px; margin-top: 10px; font-family: 'PalanquinBold', Arial;">
+    </div>
+    <div style="margin-left: 200px; margin-bottom: 20px; font-size: 12px; color: #888888;">Email ini digunakan untuk mengirim kode konfirmasi ketika ada pengguna mendaftar</div>
+</div>
+<!-- SOAL -->
+<div class="card"
+     style="display: flex; flex-flow: column wrap; justify-content: flex-start; align-items: flex-start; align-content: center; position: relative; margin-left: 20px; margin-top: 20px; margin-bottom: 20px; margin-right: 20px; overflow: hidden;">
+    <div style="width: 100%; margin-left: 30px; margin-top: 10px;">
+        <div style="font-family: 'PalanquinBold', Arial; font-size: 16px;">Soal</div>
+    </div>
+    <div style="position: relative; display: flex; justify-content: flex-start; align-items: center; align-content: center; width: 100%; padding-left: 20px; padding-top: 10px; padding-bottom: 10px;">
+        <div style="font-family: 'PalanquinBold', Arial; font-size: 13px; margin-left: 20px; margin-top: 5px;">Website :</div>
+        <textarea spellcheck="false" class="large-input" name="website" id="rules" style="z-index: 1; position: absolute; left: 0; top: 0; width: 50%; margin-left: 200px; margin-top: 10px; font-family: 'PalanquinRegular', Arial;"></textarea>
+    </div>
+</div>
+<div style="margin-top: 20px; width: 100%; display: flex; justify-content: center; margin-bottom: 20px;">
+    <button id="save-settings" class="red-button" style="width: 200px;">Simpan</button>
+</div>

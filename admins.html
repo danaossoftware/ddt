@@ -1,0 +1,62 @@
+<div class="admins-header">
+    <div style="font-family: 'PalanquinBold', Arial; font-size: 23px; margin-left: 25px; padding-top: 10px;">Daftar
+        Admin
+    </div>
+    <div style="font-size: 13px; margin-left: 25px; margin-top: -7px;">Mengatur daftar admin
+        pembimbingnya
+    </div>
+    <div style="width: 100%; height: 100%; position: absolute; top: 0; right: 0; display: flex; align-items: center; justify-content: flex-end;">
+        <!--<img width="15px" height="15px" style="margin-right: 5px;" id="options" src="img/options.png">
+        <div style="margin-right: 10px;" id="name">Sistem</div>-->
+        <img class="profile-picture" src="img/profile_picture.png" width="40px" height="40px" style="cursor: pointer; margin-right: 25px;">
+    </div>
+    <div class="account-panel">
+        <div id="account-email"><div style="font-family: 'PalanquinBold', Arial; line-height: 14px;">Email:</div>ligaligo12346@gmail.com</div>
+        <div style="position: absolute; right: 0;">
+            <div class="log-out flat-button">LOGOUT</div>
+        </div>
+    </div>
+</div>
+<div class="card"
+     style="position: relative; margin-left: 20px; margin-top: 20px; margin-bottom: 20px; margin-right: 20px; min-height: 300px;">
+    <div style="width: 100%; padding-left: 20px; padding-top: 10px; padding-bottom: 10px;">
+        <div style="font-family: 'PalanquinBold', Arial; font-size: 16px;">Daftar Admin</div>
+    </div>
+    <div style="width: 100%; position: absolute; top: 0; left: 0; display: flex; justify-content: flex-end;">
+        <div id="delete-admin-btn" class="flat-button" style="display: none;">
+            <img src="img/delete.png" width="20px" height="20px" style="margin-right: 5px;">
+            HAPUS
+        </div>
+    </div>
+    <div class="separator" style="margin-top: 10px;">&nbsp;</div>
+    <table id="admins">
+        <thead>
+        <tr id="title">
+            <th>
+                <div style="width: 100%; height: 100%; display: flex; align-items: center; align-content: center;">
+                    <label style="margin-top: 10px; position: relative; user-select: none;">&nbsp;
+                        <input type="checkbox" onclick="return false;"
+                               style="visibility: visible; position: absolute; width: 0; height: 0; opacity: 0;">
+                        <div class="admins-check">&nbsp;</div>
+                        <div class="admins-check-all">
+                            <img src="img/check.png" width="12px" height="12px"
+                                 style="position: relative; left:2px; top:-6px;">
+                        </div>
+                    </label>
+                </div>
+            </th>
+            <th>Email</th>
+            <th>Kata Sandi</th>
+            <th>Edit</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <div style="width: 100%; display: flex; justify-content: flex-end;">
+        <div onclick="addAdmin(); return false;" style="margin-bottom: 10px;" class="flat-button">
+            TAMBAH
+        </div>
+    </div>
+</div>

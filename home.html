@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Halaman Admin</title>
+    <script src="scripts/jquery-3.3.1.min.js"></script>
+    <script src="scripts/home.js"></script>
+    <link href="css/home.css" rel="stylesheet">
+    <link href="css/global.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+</head>
+<body>
+<div class="main-container">
+    <div class="nav">
+        <div id="home-panel-selector" style="margin-top: 50px;" class="nav-item active">
+            <img src="img/home.png" width="30px" height="30px">Beranda
+        </div>
+        <div id="course-panel-selector" class="nav-item">
+            <img src="img/question.png" width="30px" height="30px">Mata Kuliah
+        </div>
+        <div id="bab-panel-selector" class="nav-item">
+            <img src="img/category.png" width="30px" height="30px">Bab
+        </div>
+        <div id="questions-panel-selector" class="nav-item">
+            <img src="img/check.png" width="30px" height="30px">Soal
+        </div>
+        <div id="users-panel-selector" class="nav-item">
+            <img src="img/user.png" width="30px" height="30px">User
+        </div>
+        <div id="admins-panel-selector" class="nav-item">
+            <img src="img/admin.png" width="30px" height="30px">Admin
+        </div>
+        <div id="settings-panel-selector" class="nav-item">
+            <img src="img/settings.png" width="30px" height="30px">Pengaturan
+        </div>
+    </div>
+    <div class="main-panel">
+
+        <!-- HOME PANEL -->
+        <div id="home-panel">
+            <div class="courses-header">
+                <div style="font-family: 'PalanquinBold', Arial; font-size: 23px; margin-left: 25px; padding-top: 10px;">
+                    Daftar Mata Kuliah
+                </div>
+                <div style="font-size: 13px; margin-left: 25px; margin-top: -7px;">Mengatur daftar mata kuliah beserta pembimbingnya</div>
+                <div style="width: 100%; height: 100%; position: absolute; top: 0; right: 0; display: flex; align-items: center; justify-content: flex-end;">
+                    <!--<img width="15px" height="15px" style="margin-right: 5px;" id="options" src="img/options.png">
+                    <div style="margin-right: 10px;" id="name">Sistem</div>-->
+                    <img class="profile-picture" src="img/profile_picture.png" width="40px" height="40px"
+                         style="cursor: pointer; margin-right: 25px;">
+                </div>
+                <div class="account-panel">
+                    <div class="account-email-ctr">
+                        <div style="font-family: 'PalanquinBold', Arial; line-height: 14px;">Email:</div>
+                        <div class="account-email"></div>
+                    </div>
+                    <div style="position: absolute; right: 0;">
+                        <div class="log-out flat-button">LOGOUT</div>
+                    </div>
+                </div>
+            </div>
+            <div style="position: relative; width: calc(100% - 50px); height: calc(100% - 80px); display: flex; justify-content: center; align-items: center;">
+                <div style="font-family: 'Mohave'; color: black; font-size: 50px;">Selamat datang di backend iLatih!</div>
+            </div>
+        </div>
+
+        <!-- COURSES PANEL -->
+        <div id="course-panel">
+            <div class="courses-header">
+                <div style="font-family: 'PalanquinBold', Arial; font-size: 23px; margin-left: 25px; padding-top: 10px;">
+                    Daftar Mata Kuliah
+                </div>
+                <div style="font-size: 13px; margin-left: 25px; margin-top: -7px;">Mengatur daftar mata kuliah beserta pembimbingnya</div>
+                <div style="width: 100%; height: 100%; position: absolute; top: 0; right: 0; display: flex; align-items: center; justify-content: flex-end;">
+                    <!--<img width="15px" height="15px" style="margin-right: 5px;" id="options" src="img/options.png">
+                    <div style="margin-right: 10px;" id="name">Sistem</div>-->
+                    <img class="profile-picture" src="img/profile_picture.png" width="40px" height="40px"
+                         style="cursor: pointer; margin-right: 25px;">
+                </div>
+                <div class="account-panel">
+                    <div class="account-email-ctr">
+                        <div style="font-family: 'PalanquinBold', Arial; line-height: 14px;">Email:</div>
+                        <div class="account-email"></div>
+                    </div>
+                    <div style="position: absolute; right: 0;">
+                        <div class="log-out flat-button">LOGOUT</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card"
+                 style="position: relative; margin-left: 20px; margin-top: 20px; margin-bottom: 20px; margin-right: 20px; min-height: 300px;">
+                <div id="title" style="width: 100%; padding-left: 20px; padding-top: 10px; padding-bottom: 10px;">
+                    <div style="font-family: 'PalanquinBold', Arial; font-size: 16px;">Daftar Kategori</div>
+                </div>
+                <div style="width: 100%; position: absolute; top: 0; left: 0; display: flex; justify-content: flex-end;">
+                    <div onclick="uploadCourses()" id="upload-btn" class="flat-button" style="">
+                        <img src="img/upload.png" width="20px" height="20px" style="margin-right: 5px;">
+                        RESTORE
+                    </div>
+                    <input style="width: 0; height: 0; opacity: 0;" id="open-upload-dialog" type="file"
+                           name="uploadedFile">
+                    <div onclick="backupCourses()" id="backup-btn" class="flat-button" style="">
+                        <img src="img/backup.png" width="20px" height="20px" style="margin-right: 5px;">
+                        CADANGKAN
+                    </div>
+                    <a id="save-courses" href="courses.json" download></a>
+                    <div id="delete-course-btn" class="flat-button" style="display: none;">
+                        <img src="img/delete.png" width="20px" height="20px" style="margin-right: 5px;">
+                        HAPUS
+                    </div>
+                </div>
+                <div class="separator" style="margin-top: 10px;">&nbsp;</div>
+                <table id="courses">
+                    <thead>
+                    <tr id="titles">
+                        <th>
+                            <div style="width: 100%; height: 100%; display: flex; align-items: center; align-content: center;">
+                                <label style="margin-top: 10px; position: relative; user-select: none;">&nbsp;
+                                    <input type="checkbox" onclick="return false;"
+                                           style="visibility: visible; position: absolute; width: 0; height: 0; opacity: 0;">
+                                    <div class="check">&nbsp;</div>
+                                    <div class="check-all">
+                                        <img src="img/check.png" width="12px" height="12px"
+                                             style="position: relative; left:2px; top:-6px;">
+                                    </div>
+                                </label>
+                            </div>
+                        </th>
+                        <th>Nama</th>
+                        <th>Nama Pembimbing</th>
+                        <th>Edit</th>
+                        <th>Hapus</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+                <div style="width: 100%; display: flex; justify-content: flex-end;">
+                    <div onclick="addCourse(); return false;" style="margin-bottom: 10px;" class="flat-button">
+                        TAMBAH
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DIALOG BOX WHEN USER CLICKED 'ADD COURSE' -->
+        <div id="dialog" style="display: none; width: 100%; height: 100%; position: fixed; left: 0; top:0;">
+            <div style="width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); display: flex; justify-content: center; align-items: center;">
+                <div id="add-course-dialog"
+                     style="position: relative; width: 500px; height: 240px; background-color: white; border-radius: 8px; box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5)">
+                    <div style="display: flex; justify-content: center; font-weight: bold; color: #333333; margin-top: 8px;">
+                        TAMBAHKAN MATA KULIAH BARU
+                    </div>
+                    <!-- FORM -->
+                    <div style="margin-top: 15px; margin-left: 20px; font-size: 15px;">Nama mata kuliah:</div>
+                    <input id="course-name" class="input1" type="text" name="course">
+                    <div style="margin-top: 15px; margin-left: 20px; font-size: 15px;">Nama pembimbing:</div>
+                    <input id="lecturer" class="input1" type="text" name="name">
+                    <div id="error-msg" style="display: none; color: #ff2725; font-weight: bold; margin-left: 25px;">
+                        &nbsp;
+                    </div>
+                    <div style="width: 100%; display: flex; justify-content: right;">
+                        <div onclick="cancelAddingCourse();" class="flat-button"
+                             style="font-size: 13px; padding-left: 5px; padding-right: 5px; width: 80px;">BATAL
+                        </div>
+                        <div onclick="addNewCourse(); return false;" class="flat-button"
+                             style="font-size: 13px; padding-left: 5px; padding-right: 5px; width: 80px; margin-right: 25px;">
+                            TAMBAH
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUESTIONS PANEL -->
+        <div id="questions-panel">
+            <div class="header">
+                <div style="font-family: 'PalanquinBold', Arial; font-size: 23px; margin-left: 25px; padding-top: 10px;">
+                    Daftar Soal
+                </div>
+                <div style="font-size: 13px; margin-left: 25px; margin-top: -7px;">Mengatur daftar soal berdasarkan bab
+                    dan mata kuliahnya
+                </div>
+                <div style="width: 100%; height: 100%; position: absolute; top: 0; right: 0; display: flex; align-items: center; justify-content: flex-end;">
+                    <img class="profile-picture" src="img/profile_picture.png" width="40px" height="40px"
+                         style="cursor: pointer; margin-right: 25px;">
+                </div>
+                <div class="account-panel">
+                    <div class="account-email-ctr">
+                        <div style="font-family: 'PalanquinBold', Arial; line-height: 14px;">Email:</div>
+                        <div class="account-email"></div>
+                    </div>
+                    <div style="position: absolute; right: 0;">
+                        <div class="log-out flat-button">LOGOUT</div>
+                    </div>
+                </div>
+            </div>
+            <div id="questions">
+                &nbsp;
+            </div>
+            <div id="add-question" class="bottom-side-button">
+                <img src="img/add.png" width="30px" height="30px">
+            </div>
+
+        </div>
+
+        <!-- BAB PANEL -->
+        <div id="bab-panel">
+            <div class="bab-header">
+                <div style="font-family: 'PalanquinBold', Arial; font-size: 23px; margin-left: 25px; padding-top: 10px;">
+                    Daftar Bab
+                </div>
+                <div style="font-size: 13px; margin-left: 25px; margin-top: -7px;">Mengatur daftar bab</div>
+                <div style="width: 100%; height: 100%; position: absolute; top: 0; right: 0; display: flex; align-items: center; justify-content: flex-end;">
+                    <img class="profile-picture" src="img/profile_picture.png" width="40px" height="40px"
+                         style="cursor: pointer; margin-right: 25px;">
+                </div>
+                <div class="account-panel">
+                    <div class="account-email-ctr">
+                        <div style="font-family: 'PalanquinBold', Arial; line-height: 14px;">Email:</div>
+                        <div class="account-email"></div>
+                    </div>
+                    <div style="position: absolute; right: 0;">
+                        <div class="log-out flat-button">LOGOUT</div>
+                    </div>
+                </div>
+            </div>
+            <div id="babs">
+                &nbsp;
+            </div>
+            <div id="add-bab" class="bottom-side-button">
+                <img src="img/add.png" width="30px" height="30px">
+            </div>
+        </div>
+
+        <!-- ADMIN PANEL -->
+        <div id="admins-panel">
+            <div class="admins-header">
+                <div style="font-family: 'PalanquinBold', Arial; font-size: 23px; margin-left: 25px; padding-top: 10px;">
+                    Daftar
+                    Admin
+                </div>
+                <div style="font-size: 13px; margin-left: 25px; margin-top: -7px;">Mengatur daftar admin
+                    pembimbingnya
+                </div>
+                <div style="width: 100%; height: 100%; position: absolute; top: 0; right: 0; display: flex; align-items: center; justify-content: flex-end;">
+                    <!--<img width="15px" height="15px" style="margin-right: 5px;" id="options" src="img/options.png">
+                    <div style="margin-right: 10px;" id="name">Sistem</div>-->
+                    <img class="profile-picture" src="img/profile_picture.png" width="40px" height="40px"
+                         style="cursor: pointer; margin-right: 25px;">
+                </div>
+                <div class="account-panel">
+                    <div class="account-email-ctr">
+                        <div style="font-family: 'PalanquinBold', Arial; line-height: 14px;">Email:</div>
+                        <div class="account-email"></div>
+                    </div>
+                    <div style="position: absolute; right: 0;">
+                        <div class="log-out flat-button">LOGOUT</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card"
+                 style="position: relative; margin-left: 20px; margin-top: 20px; margin-bottom: 20px; margin-right: 20px; min-height: 300px;">
+                <div style="width: 100%; padding-left: 20px; padding-top: 10px; padding-bottom: 10px;">
+                    <div style="font-family: 'PalanquinBold', Arial; font-size: 16px;">Daftar Admin</div>
+                </div>
+                <div style="width: 100%; position: absolute; top: 0; left: 0; display: flex; justify-content: flex-end;">
+                    <div id="delete-admin-btn" class="flat-button" style="display: none;">
+                        <img src="img/delete.png" width="20px" height="20px" style="margin-right: 5px;">
+                        HAPUS
+                    </div>
+                </div>
+                <div class="separator" style="margin-top: 10px;">&nbsp;</div>
+                <table id="admins">
+                    <thead>
+                    <tr id="title">
+                        <th>
+                            <div style="width: 100%; height: 100%; display: flex; align-items: center; align-content: center;">
+                                <label style="margin-top: 10px; position: relative; user-select: none;">&nbsp;
+                                    <input type="checkbox" onclick="return false;"
+                                           style="visibility: visible; position: absolute; width: 0; height: 0; opacity: 0;">
+                                    <div class="admins-check">&nbsp;</div>
+                                    <div class="admins-check-all">
+                                        <img src="img/check.png" width="12px" height="12px"
+                                             style="position: relative; left:2px; top:-6px;">
+                                    </div>
+                                </label>
+                            </div>
+                        </th>
+                        <th>Email</th>
+                        <th>Kata Sandi</th>
+                        <th>Edit</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+                <div style="width: 100%; display: flex; justify-content: flex-end;">
+                    <div onclick="addAdmin(); return false;" style="margin-bottom: 10px;" class="flat-button">
+                        TAMBAH
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- USER PANEL -->
+        <div id="users-panel">
+            <div class="header">
+                <div style="font-family: 'PalanquinBold', Arial; font-size: 23px; margin-left: 25px; padding-top: 10px;">
+                    Daftar
+                    User
+                </div>
+                <div style="font-size: 13px; margin-left: 25px; margin-top: -7px;">Mengelola daftar user
+                </div>
+                <div style="width: 100%; height: 100%; position: absolute; top: 0; right: 0; display: flex; align-items: center; justify-content: flex-end;">
+                    <!--<img width="15px" height="15px" style="margin-right: 5px;" id="options" src="img/options.png">
+                    <div style="margin-right: 10px;" id="name">Sistem</div>-->
+                    <img class="profile-picture" src="img/profile_picture.png" width="40px" height="40px"
+                         style="cursor: pointer; margin-right: 25px;">
+                </div>
+                <div class="account-panel">
+                    <div class="account-email-ctr">
+                        <div style="font-family: 'PalanquinBold', Arial; line-height: 14px;">Email:</div>
+                        <div class="account-email"></div>
+                    </div>
+                    <div style="position: absolute; right: 0;">
+                        <div class="log-out flat-button">LOGOUT</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card"
+                 style="position: relative; margin-left: 20px; margin-top: 20px; margin-bottom: 20px; margin-right: 20px; min-height: 300px;">
+                <div style="width: 100%; padding-left: 20px; padding-top: 10px; padding-bottom: 10px;">
+                    <div style="font-family: 'PalanquinBold', Arial; font-size: 16px;">Daftar User</div>
+                </div>
+                <div style="width: 100%; position: absolute; top: 0; left: 0; display: flex; justify-content: flex-end;">
+                    <div id="delete-user-btn" class="flat-button" style="display: none;">
+                        <img src="img/delete.png" width="20px" height="20px" style="margin-right: 5px;">
+                        HAPUS
+                    </div>
+                </div>
+                <div class="separator" style="margin-top: 10px;">&nbsp;</div>
+                <table id="users">
+                    <thead>
+                    <tr id="title">
+                        <th>
+                            <div style="width: 100%; height: 100%; display: flex; align-items: center; align-content: center;">
+                                <label style="margin-top: 10px; position: relative; user-select: none;">&nbsp;
+                                    <input type="checkbox" onclick="return false;"
+                                           style="visibility: visible; position: absolute; width: 0; height: 0; opacity: 0;">
+                                    <div class="users-check">&nbsp;</div>
+                                    <div class="users-check-all">
+                                        <img src="img/check.png" width="12px" height="12px"
+                                             style="position: relative; left:2px; top:-6px;">
+                                    </div>
+                                </label>
+                            </div>
+                        </th>
+                        <th>Nama</th>
+                        <th>Email</th>
+                        <th>Kata Sandi</th>
+                        <th>Phone No.</th>
+                        <th>Skor</th>
+                        <th>Edit</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div style="width: 100%; display: flex; justify-content: flex-end;">
+                    <div onclick="addUser(); return false;" style="margin-bottom: 10px;" class="flat-button">
+                        TAMBAH
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SETTINGS PANEL -->
+        <div id="settings-panel">
+            <div class="header">
+                <div style="font-family: 'PalanquinBold', Arial; font-size: 23px; margin-left: 25px; padding-top: 10px;">
+                    Pengaturan
+                </div>
+                <div style="font-size: 13px; margin-left: 25px; margin-top: -7px;">Mengatur MySQL host, email admin atau
+                    ekspor database
+                </div>
+                <div style="width: 100%; height: 100%; position: absolute; top: 0; right: 0; display: flex; align-items: center; justify-content: flex-end;">
+                    <!--<img width="15px" height="15px" style="margin-right: 5px;" id="options" src="img/options.png">
+                    <div style="margin-right: 10px;" id="name">Sistem</div>-->
+                    <img class="profile-picture" src="img/profile_picture.png" width="40px" height="40px"
+                         style="cursor: pointer; margin-right: 25px;">
+                </div>
+                <div class="account-panel">
+                    <div class="account-email-ctr">
+                        <div style="font-family: 'PalanquinBold', Arial; line-height: 14px;">Email:</div>
+                        <div class="account-email"></div>
+                    </div>
+                    <div style="position: absolute; right: 0;">
+                        <div class="log-out flat-button">LOGOUT</div>
+                    </div>
+                </div>
+            </div>
+            <div id="settings-saved"
+                 style="display: none; margin-left: 20px; margin-top: 5px; padding-left: 10px; padding-top: 8px; padding-bottom: 8px; border: 1px solid #c2ebbc; margin-right: 20px; margin-top: 10px; background-color: #ddf5d3; border-radius: 4px; font-family: 'PalanquinBold', Arial; font-size: 14px; color: #346543;">
+                Pengaturan berhasil disimpan. Mohon refresh halaman.
+            </div>
+            <!-- DATABASE -->
+            <div class="card" id="db-form"
+                 style="display: flex; flex-flow: column wrap; justify-content: flex-start; align-items: flex-start; align-content: center; position: relative; margin-left: 20px; margin-top: 20px; margin-bottom: 20px; margin-right: 20px; overflow: hidden;">
+                <div style="width: 100%; margin-left: 30px; margin-top: 10px;">
+                    <div style="font-family: 'PalanquinBold', Arial; font-size: 16px;">Website</div>
+                </div>
+                <div class="separator" style="margin-left: 15px; margin-top: 10px;">&nbsp;</div>
+                <!-- WEBSITE -->
+                <div style="position: relative; display: flex; justify-content: flex-start; align-items: center; align-content: center; width: 100%; padding-left: 20px; padding-top: 10px; padding-bottom: 10px;">
+                    <div style="font-family: 'PalanquinBold', Arial; font-size: 13px; margin-left: 20px; margin-top: 5px;">
+                        Website :
+                    </div>
+                    <input class="input1" type="text" name="website" id="website"
+                           style="z-index: 1; position: absolute; left: 0; top: 0; width: 50%; margin-left: 200px; margin-top: 10px; font-family: 'PalanquinRegular', Arial;">
+                </div>
+                <!-- PORT -->
+                <!--<div style="position: relative; display: flex; justify-content: flex-start; align-items: center; align-content: center; width: 100%; padding-left: 20px; padding-top: 10px; padding-bottom: 10px;">
+                    <div style="font-family: 'PalanquinBold', Arial; font-size: 13px; margin-left: 20px; margin-top: 5px;">Port server MySQL :</div>
+                    <input class="input1" type="text" name="mysql-port" id="mysql-port" style="z-index: 1; position: absolute; left: 0; top: 0; width: 50%; margin-left: 200px; margin-top: 10px; font-family: 'PalanquinRegular', Arial;">
+                </div>-->
+                <!-- DB USER -->
+                <div style="position: relative; display: flex; justify-content: flex-start; align-items: center; align-content: center; width: 100%; padding-left: 20px; padding-top: 10px; padding-bottom: 10px;">
+                    <div style="font-family: 'PalanquinBold', Arial; font-size: 13px; margin-left: 20px; margin-top: 5px;">
+                        Nama user database :
+                    </div>
+                    <input class="input1" type="text" name="db-user" id="db-user"
+                           style="z-index: 1; position: absolute; left: 0; top: 0; width: 50%; margin-left: 200px; margin-top: 10px; font-family: 'PalanquinRegular', Arial;">
+                </div>
+                <!-- DB PASS -->
+                <div style="position: relative; display: flex; justify-content: flex-start; align-items: center; align-content: center; width: 100%; padding-left: 20px; padding-top: 10px; padding-bottom: 10px;">
+                    <div style="font-family: 'PalanquinBold', Arial; font-size: 13px; margin-left: 20px; margin-top: 5px;">
+                        Kata sandi database :
+                    </div>
+                    <input class="input1" type="password" name="db-pass" id="db-password"
+                           style="z-index: 1; position: absolute; left: 0; top: 0; width: 50%; margin-left: 200px; margin-top: 10px; font-family: 'PalanquinRegular', Arial;">
+                </div>
+                <!-- DB NAME -->
+                <div style="position: relative; display: flex; justify-content: flex-start; align-items: center; align-content: center; width: 100%; padding-left: 20px; padding-top: 10px; padding-bottom: 10px;">
+                    <div style="font-family: 'PalanquinBold', Arial; font-size: 13px; margin-left: 20px; margin-top: 5px;">
+                        Nama database :
+                    </div>
+                    <input class="input1" type="text" name="db-name" id="db-name"
+                           style="z-index: 1; position: absolute; left: 0; top: 0; width: 50%; margin-left: 200px; margin-top: 10px; font-family: 'PalanquinRegular', Arial;">
+                </div>
+                <button class="red-button"
+                        style="margin-left: 200px; margin-top: 5px; margin-bottom: 20px; width: 200px;">Ekspor Database
+                </button>
+            </div>
+            <!-- ADMIN -->
+            <div class="card"
+                 style="display: flex; flex-flow: column wrap; justify-content: flex-start; align-items: flex-start; align-content: center; position: relative; margin-left: 20px; margin-top: 20px; margin-bottom: 20px; margin-right: 20px; overflow: hidden;">
+                <div style="width: 100%; margin-left: 30px; margin-top: 10px;">
+                    <div style="font-family: 'PalanquinBold', Arial; font-size: 16px;">Admin</div>
+                </div>
+                <div class="separator" style="margin-left: 15px; margin-top: 10px;">&nbsp;</div>
+                <div style="position: relative; display: flex; justify-content: flex-start; align-items: center; align-content: center; width: 100%; padding-left: 20px; padding-top: 10px; padding-bottom: 3px;">
+                    <div style="font-family: 'PalanquinBold', Arial; font-size: 13px; margin-left: 20px; margin-top: 5px;">
+                        Email :
+                    </div>
+                    <input class="input1" type="text" name="mysql-host" id="admin-email"
+                           style="z-index: 1; position: absolute; left: 0; top: 0; width: 50%; margin-left: 200px; margin-top: 10px; font-family: 'PalanquinBold', Arial;">
+                </div>
+                <div style="margin-left: 200px; margin-bottom: 20px; font-size: 12px; color: #888888;">Email ini
+                    digunakan untuk mengirim kode konfirmasi ketika ada pengguna mendaftar
+                </div>
+                <div style="position: relative; display: flex; justify-content: flex-start; align-items: center; align-content: center; width: 100%; padding-left: 20px; padding-top: 10px; padding-bottom: 3px;">
+                    <div style="font-family: 'PalanquinBold', Arial; font-size: 13px; margin-left: 20px; margin-top: 5px;">
+                        Alamat :
+                    </div>
+                    <input class="input1" type="text" name="mysql-host" id="admin-address"
+                           style="z-index: 1; position: absolute; left: 0; top: 0; width: 50%; margin-left: 200px; margin-top: 10px; font-family: 'PalanquinBold', Arial;">
+                </div>
+                <div style="position: relative; display: flex; justify-content: flex-start; align-items: center; align-content: center; width: 100%; padding-left: 20px; padding-top: 10px; padding-bottom: 3px; margin-bottom: 10px;">
+                    <div style="font-family: 'PalanquinBold', Arial; font-size: 13px; margin-left: 20px; margin-top: 5px;">
+                        Nomor Telepon :
+                    </div>
+                    <input class="input1" type="text" name="mysql-host" id="admin-phone"
+                           style="z-index: 1; position: absolute; left: 0; top: 0; width: 50%; margin-left: 200px; margin-top: 10px; font-family: 'PalanquinBold', Arial;">
+                </div>
+            </div>
+            <!-- SOAL -->
+            <div class="card"
+                 style="display: flex; flex-flow: column wrap; justify-content: flex-start; align-items: flex-start; align-content: center; position: relative; margin-left: 20px; margin-top: 20px; margin-bottom: 20px; margin-right: 20px; overflow: hidden; height: 400px;">
+                <div style="width: 100%; margin-left: 30px; margin-top: 10px;">
+                    <div style="font-family: 'PalanquinBold', Arial; font-size: 16px;">Soal</div>
+                </div>
+                <div class="separator" style="margin-left: 15px; margin-top: 10px;">&nbsp;</div>
+                <div style="position: relative; display: flex; justify-content: flex-start; align-items: center; align-content: center; width: 100%; padding-left: 20px; padding-top: 10px; padding-bottom: 10px;">
+                    <div style="font-family: 'PalanquinBold', Arial; font-size: 13px; margin-left: 20px; margin-top: 5px;">Peraturan :</div>
+                    <textarea spellcheck="false" cols="80" rows="10" class="large-input" name="rules" id="rules" style="z-index: 1; position: absolute; left: 0; top: 0; width: 50%; margin-left: 200px; margin-top: 10px; font-family: 'PalanquinRegular', Arial; height: 300px;">&nbsp;</textarea>
+                </div>
+            </div>
+            <!-- MEDIA SOSIAL -->
+            <div class="card"
+                 style="display: flex; flex-flow: column wrap; justify-content: flex-start; align-items: flex-start; align-content: center; position: relative; margin-left: 20px; margin-top: 20px; margin-bottom: 20px; margin-right: 20px; overflow: hidden; height: 300px;">
+                <div style="width: 100%; margin-left: 30px; margin-top: 10px;">
+                    <div style="font-family: 'PalanquinBold', Arial; font-size: 16px;">Media Sosial</div>
+                </div>
+                <div class="separator" style="margin-left: 15px; margin-top: 10px;">&nbsp;</div>
+                <div style="position: relative; display: flex; justify-content: flex-start; align-items: center; align-content: center; width: 100%; padding-left: 20px; padding-top: 10px; padding-bottom: 10px;">
+                    <div style="font-family: 'PalanquinBold', Arial; font-size: 13px; margin-left: 20px; margin-top: 5px;">Facebook :</div>
+                    <input class="input1" type="text" name="mysql-host" id="facebook-url"
+                           style="z-index: 1; position: absolute; left: 0; top: 0; width: 50%; margin-left: 200px; margin-top: 10px; font-family: 'PalanquinBold', Arial;">
+                </div>
+                <div style="position: relative; display: flex; justify-content: flex-start; align-items: center; align-content: center; width: 100%; padding-left: 20px; padding-top: 10px; padding-bottom: 10px;">
+                    <div style="font-family: 'PalanquinBold', Arial; font-size: 13px; margin-left: 20px; margin-top: 5px;">Twitter :</div>
+                    <input class="input1" type="text" name="mysql-host" id="twitter-url"
+                           style="z-index: 1; position: absolute; left: 0; top: 0; width: 50%; margin-left: 200px; margin-top: 10px; font-family: 'PalanquinBold', Arial;">
+                </div>
+                <div style="position: relative; display: flex; justify-content: flex-start; align-items: center; align-content: center; width: 100%; padding-left: 20px; padding-top: 10px; padding-bottom: 10px;">
+                    <div style="font-family: 'PalanquinBold', Arial; font-size: 13px; margin-left: 20px; margin-top: 5px;">Instagram :</div>
+                    <input class="input1" type="text" name="mysql-host" id="instagram-url"
+                           style="z-index: 1; position: absolute; left: 0; top: 0; width: 50%; margin-left: 200px; margin-top: 10px; font-family: 'PalanquinBold', Arial;">
+                </div>
+                <div style="position: relative; display: flex; justify-content: flex-start; align-items: center; align-content: center; width: 100%; padding-left: 20px; padding-top: 10px; padding-bottom: 10px;">
+                    <div style="font-family: 'PalanquinBold', Arial; font-size: 13px; margin-left: 20px; margin-top: 5px;">Google+ :</div>
+                    <input class="input1" type="text" name="mysql-host" id="google-plus-url"
+                           style="z-index: 1; position: absolute; left: 0; top: 0; width: 50%; margin-left: 200px; margin-top: 10px; font-family: 'PalanquinBold', Arial;">
+                </div>
+                <div style="position: relative; display: flex; justify-content: flex-start; align-items: center; align-content: center; width: 100%; padding-left: 20px; padding-top: 10px; padding-bottom: 10px;">
+                    <div style="font-family: 'PalanquinBold', Arial; font-size: 13px; margin-left: 20px; margin-top: 5px;">LinkedIn :</div>
+                    <input class="input1" type="text" name="mysql-host" id="linked-in-url"
+                           style="z-index: 1; position: absolute; left: 0; top: 0; width: 50%; margin-left: 200px; margin-top: 10px; font-family: 'PalanquinBold', Arial;">
+                </div>
+            </div>
+            <div style="margin-top: 20px; width: 100%; display: flex; justify-content: center; margin-bottom: 20px;">
+                <button id="save-settings" class="red-button" style="width: 200px;">Simpan</button>
+            </div>
+        </div>
+
+        <!-- ADD BAB DIALOG -->
+        <div id="add-bab-dialog-ctr"
+             style="width: 100%; height: 100%; margin: 0 auto; position: fixed; left: 0; top: 0; background-color: rgba(0, 0, 0, 0.8); display: none; justify-content: center; align-items: center;">
+            <div id="add-bab-dialog"
+                 style="display: flex; flex-flow: row wrap; width: 500px; height: 500px; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);">
+                <div style="width: 100%; display: flex; justify-content: center; font-family: 'PalanquinBold', Arial; margin-top: 5px; font-size: 20px;">
+                    TAMBAH BAB BARU
+                </div>
+                <div style="width: 100%; height: 500px; display: flex; flex-flow: row nowrap; margin-top: 10px;">
+                    <!-- IMAGE -->
+                    <label for="select-bab-img" id="add-bab-img-ctr"
+                           style="height: 150px; margin-left: 20px; border-radius: 10px; position: relative; cursor: pointer;">
+                        <img id="bab-img" style="border-radius: 10px;" src="img/bab-placeholder.jpg" width="150px"
+                             height="150px">
+                        <div id="add-bab-img-overlay"
+                             style="width: 150px; height: 150px; border-radius: 10px; position: absolute; left: 0; top: 0; display: flex; justify-content: center; align-items: center;">
+                            <div id="add-bab-img-btn" style="opacity: 0; border-radius: 5px;" class="ripple-ctr">
+                                <button style="pointer-events: none;" class="ripple-btn ripple">TAMBAH GAMBAR</button>
+                            </div>
+                        </div>
+                    </label>
+                    <input id="select-bab-img" type="file" name="browse" style="width: 0; height: 0; overflow: hidden;">
+                    <div style="width: 100%; height: 530px;">
+                        <div style="margin-top: 5px; margin-left: 20px;">Kode akses:</div>
+                        <input id="add-bab-access-code" class="input1" style="width: 81%;" type="text">
+                        <div style="margin-top: 0; margin-left: 20px;">Lama waktu (menit):</div>
+                        <input id="add-bab-time-limit" class="input1" style="width: 81%;" type="text">
+                        <div style="margin-top: 0; margin-left: 20px;">Nama bab:</div>
+                        <input id="bab-name" class="input1" style="width: 81%;" name="name" type="text">
+                        <div style="margin-top: 5px; margin-left: 20px;">Mata kuliah:</div>
+                        <div id="show-courses"
+                             style="z-index: 1; -moz-user-select: none; user-select: none; width: 91%; position: relative; margin-left: 20px; margin-right: 25px;">
+                            <div id="choose-course" style="cursor: pointer;">Pilih mata kuliah</div>
+                            <div style="display: flex; align-items: center; position: absolute; right: 0; top: 0; height: 100%; padding-top: 3px; padding-right: 10px; cursor: pointer">
+                                <img src="img/options2.png" width="10px" height="10px">
+                            </div>
+                            <ul id="courses-2"
+                                style="top: 15px; justify-content: flex-start; flex-wrap: wrap; overflow-y: scroll; display: none; position: absolute; width: 100%; max-height: 150px; background-color: white; border: 1px solid rgba(136, 136, 136, 0.5); border-radius: 3px; padding: 0; list-style-type: none;">
+                                &nbsp;
+                            </ul>
+                        </div>
+                        <div id="add-bab-error" class="error" style="margin-top: 10px; margin-left: 25px;">&nbsp;</div>
+                        <div style="width: 100%; margin-top: 5px; display: flex; justify-content: flex-end;">
+                            <div onclick="$('#add-bab-dialog-ctr').css('display', 'none');" class="flat-button">BATAL
+                            </div>
+                            <div onclick="addNewBab()" class="flat-button">TAMBAH</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ADD QUESTION DIALOG -->
+        <div id="add-question-dialog-ctr"
+             style="width: 100%; height: 100%; margin: 0 auto; position: fixed; left: 0; top: 0; background-color: rgba(0, 0, 0, 0.8); display: none; justify-content: center; align-items: center;">
+            <div id="add-question-dialog"
+                 style="display: flex; flex-flow: column nowrap; width: 500px; height: 220px; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);">
+                <div style="width: 100%; display: flex; justify-content: center; font-family: 'PalanquinBold', Arial; margin-top: 5px; font-size: 20px;">
+                    TAMBAH SOAL BARU
+                </div>
+                <div style="margin-left: 20px; font-family: 'PalanquinBold', Arial; font-size: 17px;">Mata kuliah:</div>
+                <div id="add-question-show-courses"
+                     style="z-index: 3; -moz-user-select: none; user-select: none; width: 91%; position: relative; margin-left: 20px; margin-right: 25px;">
+                    <div id="add-question-choose-course" style="cursor: pointer;">Pilih mata kuliah</div>
+                    <div style="display: flex; align-items: center; position: absolute; right: 0; top: 0; height: 100%; padding-top: 3px; padding-right: 10px; cursor: pointer">
+                        <img src="img/options2.png" width="10px" height="10px">
+                    </div>
+                    <ul id="add-question-courses"
+                        style="z-index: 4; top: 15px; justify-content: flex-start; flex-wrap: wrap; overflow-y: scroll; display: none; position: absolute; width: 100%; max-height: 150px; background-color: white; border: 1px solid rgba(136, 136, 136, 0.5); border-radius: 3px; padding: 0; list-style-type: none;">
+                        &nbsp;
+                    </ul>
+                </div>
+                <div style="margin-left: 20px; font-family: 'PalanquinBold', Arial; font-size: 17px;">Bab:</div>
+                <div id="add-question-show-babs"
+                     style="z-index: 1; -moz-user-select: none; user-select: none; width: 91%; position: relative; margin-left: 20px; margin-right: 25px;">
+                    <div id="add-question-choose-bab" style="cursor: pointer;">Pilih bab</div>
+                    <div style="display: flex; align-items: center; position: absolute; right: 0; top: 0; height: 100%; padding-top: 3px; padding-right: 10px; cursor: pointer">
+                        <img src="img/options2.png" width="10px" height="10px">
+                    </div>
+                    <ul id="add-question-babs"
+                        style="z-index: 2; top: 15px; justify-content: flex-start; flex-wrap: wrap; overflow-y: scroll; display: none; position: absolute; width: 100%; max-height: 150px; background-color: white; border: 1px solid rgba(136, 136, 136, 0.5); border-radius: 3px; padding: 0; list-style-type: none;">
+                        &nbsp;
+                    </ul>
+                </div>
+                <div id="add-question-error" class="error" style="margin-top: 0; margin-left: 20px;">&nbsp;</div>
+                <div style="width: 100%; margin-top: 5px; display: flex; justify-content: flex-end;">
+                    <div onclick="cancelAddingQuestion()" class="flat-button">BATAL</div>
+                    <div onclick="addQuestion()" class="flat-button">TAMBAH</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FILL QUESTION DIALOG -->
+        <div id="fill-question-dialog-ctr"
+             style="width: 100%; height: 100%; margin: 0 auto; position: fixed; left: 0; top: 0; background-color: rgba(0, 0, 0, 0.8); display: none; justify-content: center; align-items: center;">
+            <div id="fill-question-dialog"
+                 style="display: flex; flex-flow: column nowrap; width: 1010px; height: 500px; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);">
+                <div style="width: 100%; display: flex; justify-content: center; font-family: 'PalanquinBold', Arial; margin-top: 5px; font-size: 20px;">
+                    TAMBAH SOAL BARU
+                </div>
+                <div style="width: 100%; display: flex; flex-flow: row nowrap;">
+                    <div style="width: 300px; display: flex; justify-content: flex-start; align-items: center; flex-flow: column nowrap;">
+                        <div style="width: 300px; display: flex; justify-content: flex-start; flex-flow: column nowrap;">
+                            <div style="font-family: 'PalanquinBold', Arial; margin-left: 20px;">Gambar :</div>
+                            <div style="margin-left: 20px; width: 280px; height: 110px; position: relative;">
+                                <div id="fill-question-img" style="width: 280px; height: 110px; background-position: center center; background-repeat: no-repeat; border-radius: 5px; background-image: url('img/bab-placeholder.jpg');"></div>
+                                <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; position: absolute; left: 0; top: 0;">
+                                    <button onclick="selectImage()" class="blue-button">Pilih Gambar</button>
+                                    <input id="fill-question-select-img" type="file" accept="image/*" name="browse" style="width: 0; height: 0; overflow: hidden;">
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width: 300px; display: flex; justify-content: flex-start; flex-flow: column nowrap;">
+                            <div style="font-family: 'PalanquinBold', Arial; margin-left: 20px;">Video :</div>
+                            <div style="margin-left: 20px; width: 280px; height: 110px; position: relative;">
+                                <video id="fill-question-video" style="width: 280px; height: 110px; background-color: black; border-radius: 5px;">
+                                    <source id="fill-question-video-source">
+                                </video>
+                                <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; position: absolute; left: 0; top: 0;">
+                                    <button onclick="selectVideo()" class="blue-button" style="">Pilih Video</button>
+                                    <input id="fill-question-select-video" type="file" accept="video/*" name="browse" style="width: 0; height: 0; overflow: hidden;">
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width: 300px; display: flex; justify-content: flex-start; flex-flow: column nowrap;">
+                            <div style="font-family: 'PalanquinBold', Arial; margin-left: 20px;">Audio :</div>
+                            <audio id="fill-question-audio" style="margin-left: 20px;" controls>
+                                <source id="fill-question-audio-source" src="">
+                            </audio>
+                            <div style="width: 100%; display: flex; justify-content: center; margin-top: 10px;">
+                                <button onclick="selectAudio()" class="blue-button">Pilih Audio</button>
+                                <input id="fill-question-select-audio" type="file" accept="audio/*" name="browse" style="width: 0; height: 0; overflow: hidden;">
+                            </div>
+                        </div>
+                    </div>
+                    <div style="width: 300px; display: flex; flex-flow: column nowrap;">
+                        <div style="margin-left: 20px; font-family: 'PalanquinBold', Arial; font-size: 17px;">Alasan:
+                        </div>
+                        <textarea spellcheck="false" id="add-question-reason" class="large-input">&nbsp;</textarea>
+                        <div style="font-family: 'PalanquinBold', Arial; margin-left: 20px;">Tipe soal:</div>
+                        <div style="width: 100%; position: relative;">
+                            <div onclick="showQuestionTypeOptions()" id="choose-question-type"
+                                 style="margin-left: 20px; cursor: pointer; user-select: none;">Pilih Tipe soal
+                            </div>
+                            <div style="display: flex; align-items: center; position: absolute; right: 0; top: 0; height: 100%; padding-top: 3px; margin-right: 30px; cursor: pointer">
+                                <img src="img/options2.png" width="10px" height="10px">
+                            </div>
+                            <ul id="question-types"
+                                style="margin-left: 20px; z-index: 1000; top: 15px; justify-content: flex-start; flex-wrap: wrap; overflow: hidden; display: none; position: absolute; width: 90%; max-height: 150px; background-color: white; border: 1px solid rgba(136, 136, 136, 0.5); border-radius: 3px; padding: 0; list-style-type: none;">
+                                <li class="question-type-item show-question-type-item"
+                                    onclick="selectQuestionType(this);">
+                                    <div style="margin-left: 10px; margin-right: 10px; font-size: 18px;">Pilihan</div>
+                                </li>
+                                <li class="question-type-item show-question-type-item"
+                                    onclick="selectQuestionType(this);">
+                                    <div style="margin-left: 10px; margin-right: 10px; font-size: 18px;">Isian</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div style="font-family: 'PalanquinBold', Arial; margin-left: 20px;">Jawaban:</div>
+                        <div id="pilihan-answers" style="">
+                            <div style="width: 99%; display: flex; flex-flow: row nowrap; margin-left: 20px; position: relative;">
+                                <div style="font-family: 'PalanquinBold', Arial;">A:</div>
+                                <input class="input1" id="answer-a" type="text">
+                                <div id="a-check">
+                                    <img src="img/check-white.png" width="13px" height="13px">
+                                    <img id="a-check-active" src="img/check-active.png" width="13px" height="13px">
+                                </div>
+                            </div>
+                            <div style="width: 99%; display: flex; flex-flow: row nowrap; margin-left: 20px; margin-top: 10px; position: relative;">
+                                <div style="font-family: 'PalanquinBold', Arial;">B:</div>
+                                <input class="input1" id="answer-b" type="text">
+                                <div id="b-check">
+                                    <img src="img/check-white.png" width="13px" height="13px">
+                                    <img id="b-check-active" src="img/check-active.png" width="13px" height="13px">
+                                </div>
+                            </div>
+                            <div style="width: 99%; display: flex; flex-flow: row nowrap; margin-left: 20px; margin-top: 10px; position: relative;">
+                                <div style="font-family: 'PalanquinBold', Arial;">C:</div>
+                                <input class="input1" id="answer-c" type="text">
+                                <div id="c-check">
+                                    <img src="img/check-white.png" width="13px" height="13px">
+                                    <img id="c-check-active" src="img/check-active.png" width="13px" height="13px">
+                                </div>
+                            </div>
+                            <div style="width: 99%; display: flex; flex-flow: row nowrap; margin-left: 20px; margin-top: 10px; position: relative;">
+                                <div style="font-family: 'PalanquinBold', Arial;">D:</div>
+                                <input class="input1" id="answer-d" type="text">
+                                <div id="d-check">
+                                    <img src="img/check-white.png" width="13px" height="13px">
+                                    <img id="d-check-active" src="img/check-active.png" width="13px" height="13px">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="isian-answers" style="display: none;">
+                            <div style="width: 99%; display: flex; flex-flow: row nowrap; margin-left: 20px; position: relative;">
+                                <input class="input1" id="isian-a" type="text">
+                            </div>
+                        </div>
+                        <div id="fill-question-error" class="error" style="margin-top: 0; margin-left: 20px;">&nbsp;
+                        </div>
+                    </div>
+                    <div style="width: 400px; display: flex; flex-flow: column nowrap;">
+                        <div style="margin-left: 20px; font-family: 'PalanquinBold', Arial; font-size: 17px;">Soal:</div>
+                        <textarea spellcheck="false" id="add-question-content" class="large-input" style="height: 345px;">&nbsp;</textarea>
+                        <div style="width: 99%; margin-top: 5px; display: flex; justify-content: flex-end;">
+                            <div onclick="cancelAddingQuestion()" class="flat-button">BATAL</div>
+                            <div onclick="fillQuestion()" class="flat-button">TAMBAH</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="edit-question-dialog-ctr"
+             style="width: 100%; height: 100%; margin: 0 auto; position: fixed; left: 0; top: 0; background-color: rgba(0, 0, 0, 0.8); display: none; justify-content: center; align-items: center;">
+            <div id="edit-question-dialog"
+                 style="display: flex; flex-flow: column nowrap; width: 850px; height: 500px; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);">
+                <div style="width: 100%; display: flex; justify-content: center; font-family: 'PalanquinBold', Arial; margin-top: 5px; font-size: 20px;">
+                    EDIT SOAL
+                </div>
+                <div style="width: 100%; display: flex; flex-flow: row nowrap;">
+                    <div style="width: 300px; display: flex; justify-content: flex-start; align-items: center; flex-flow: column nowrap;">
+                        <div style="width: 300px; display: flex; justify-content: flex-start; flex-flow: column nowrap;">
+                            <div style="font-family: 'PalanquinBold', Arial; margin-left: 20px;">Gambar :</div>
+                            <div style="margin-left: 20px; width: 280px; height: 110px; position: relative;">
+                                <div id="edit-question-img" style="width: 280px; height: 110px; background-position: center center; background-repeat: no-repeat; border-radius: 5px; background-image: url('img/bab-placeholder.jpg');"></div>
+                                <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; position: absolute; left: 0; top: 0;">
+                                    <button onclick="editQuestionSelectImage()" class="blue-button">Pilih Gambar</button>
+                                    <input id="edit-question-select-img" type="file" accept="image/*" name="browse" style="width: 0; height: 0; overflow: hidden;">
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width: 300px; display: flex; justify-content: flex-start; flex-flow: column nowrap;">
+                            <div style="font-family: 'PalanquinBold', Arial; margin-left: 20px;">Video :</div>
+                            <div style="margin-left: 20px; width: 280px; height: 110px; position: relative;">
+                                <video id="edit-question-video" style="width: 280px; height: 110px; background-color: black; border-radius: 5px;">
+                                    <source id="edit-question-video-source">
+                                </video>
+                                <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; position: absolute; left: 0; top: 0;">
+                                    <button onclick="editQuestionSelectVideo()" class="blue-button" style="">Pilih Video</button>
+                                    <input id="edit-question-select-video" type="file" accept="video/*" name="browse" style="width: 0; height: 0; overflow: hidden;">
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width: 300px; display: flex; justify-content: flex-start; flex-flow: column nowrap;">
+                            <div style="font-family: 'PalanquinBold', Arial; margin-left: 20px;">Audio :</div>
+                            <audio id="edit-question-audio" style="margin-left: 20px;" controls>
+                                <source id="edit-question-audio-source" src="">
+                            </audio>
+                            <div style="width: 100%; display: flex; justify-content: center; margin-top: 10px;">
+                                <button onclick="editQuestionSelectAudio()" class="blue-button">Pilih Audio</button>
+                                <input id="edit-question-select-audio" type="file" accept="audio/*" name="browse" style="width: 0; height: 0; overflow: hidden;">
+                            </div>
+                        </div>
+                    </div>
+                    <div style="width: 700px; display: flex; flex-flow: column nowrap; margin-right: 30px;">
+                        <div style="width: 95%; display: flex; flex-flow: row nowrap;">
+                            <div style="width: 50%; display: flex; flex-flow: column nowrap;">
+                                <div style="margin-left: 20px; font-family: 'PalanquinBold', Arial; font-size: 17px;">Soal:
+                                </div>
+                                <textarea spellcheck="false" id="edit-question-content" class="large-input">&nbsp;</textarea>
+                            </div>
+                            <div style="width: 50%; display: flex; flex-flow: column nowrap;">
+                                <div style="margin-left: 20px; font-family: 'PalanquinBold', Arial; font-size: 17px;">Alasan:
+                                </div>
+                                <textarea spellcheck="false" id="edit-question-reason" class="large-input">&nbsp;</textarea>
+                            </div>
+                        </div>
+                        <div style="font-family: 'PalanquinBold', Arial; margin-left: 20px;">Tipe soal:</div>
+                        <div style="width: 100%; position: relative;">
+                            <div onclick="showEditQuestionTypeOptions()" id="edit-question-choose-question-type"
+                                 style="margin-left: 20px; cursor: pointer; user-select: none;">Pilih Tipe soal
+                            </div>
+                            <div style="display: flex; align-items: center; position: absolute; right: 0; top: 0; height: 100%; padding-top: 3px; margin-right: 30px; cursor: pointer">
+                                <img src="img/options2.png" width="10px" height="10px">
+                            </div>
+                            <ul id="edit-question-types"
+                                style="margin-left: 20px; z-index: 1000; top: 15px; justify-content: flex-start; flex-wrap: wrap; overflow: hidden; display: none; position: absolute; width: 90%; max-height: 150px; background-color: white; border: 1px solid rgba(136, 136, 136, 0.5); border-radius: 3px; padding: 0; list-style-type: none;">
+                                <li class="edit-question-type-item show-question-type-item"
+                                    onclick="selectEditQuestionType(0);">
+                                    <div style="margin-left: 10px; margin-right: 10px; font-size: 18px;">Pilihan</div>
+                                </li>
+                                <li class="edit-question-type-item show-question-type-item"
+                                    onclick="selectEditQuestionType(1);">
+                                    <div style="margin-left: 10px; margin-right: 10px; font-size: 18px;">Isian</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div style="font-family: 'PalanquinBold', Arial; margin-left: 20px;">Jawaban:</div>
+                        <div id="edit-question-pilihan-answers" style="">
+                            <div style="width: 100%; display: flex; flex-flow: row nowrap; margin-left: 20px; position: relative;">
+                                <div style="font-family: 'PalanquinBold', Arial;">A:</div>
+                                <input class="input1" id="edit-question-answer-a" type="text" style="width: 430px;">
+                                <div id="edit-question-a-check">
+                                    <img src="img/check-white.png" width="13px" height="13px">
+                                    <img id="edit-question-a-check-active" src="img/check-active.png" width="13px" height="13px">
+                                </div>
+                            </div>
+                            <div style="width: 100%; display: flex; flex-flow: row nowrap; margin-left: 20px; margin-top: 10px; position: relative;">
+                                <div style="font-family: 'PalanquinBold', Arial;">B:</div>
+                                <input class="input1" id="edit-question-answer-b" type="text" style="width: 430px;">
+                                <div id="edit-question-b-check">
+                                    <img src="img/check-white.png" width="13px" height="13px">
+                                    <img id="edit-question-b-check-active" src="img/check-active.png" width="13px" height="13px">
+                                </div>
+                            </div>
+                            <div style="width: 100%; display: flex; flex-flow: row nowrap; margin-left: 20px; margin-top: 10px; position: relative;">
+                                <div style="font-family: 'PalanquinBold', Arial;">C:</div>
+                                <input class="input1" id="edit-question-answer-c" type="text" style="width: 430px;">
+                                <div id="edit-question-c-check">
+                                    <img src="img/check-white.png" width="13px" height="13px">
+                                    <img id="edit-question-c-check-active" src="img/check-active.png" width="13px" height="13px">
+                                </div>
+                            </div>
+                            <div style="width: 100%; display: flex; flex-flow: row nowrap; margin-left: 20px; margin-top: 10px; position: relative;">
+                                <div style="font-family: 'PalanquinBold', Arial;">D:</div>
+                                <input class="input1" id="edit-question-answer-d" type="text" style="width: 430px;">
+                                <div id="edit-question-d-check">
+                                    <img src="img/check-white.png" width="13px" height="13px">
+                                    <img id="edit-question-d-check-active" src="img/check-active.png" width="13px" height="13px">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="edit-question-isian-answers" style="display: none;">
+                            <div style="width: 99%; display: flex; flex-flow: row nowrap; margin-left: 20px; position: relative;">
+                                <input class="input1" id="edit-question-isian-a" type="text">
+                            </div>
+                        </div>
+                        <div id="edit-question-error" class="error" style="margin-top: 0; margin-left: 20px;">&nbsp;
+                        </div>
+                        <div style="width: 99%; margin-top: 5px; display: flex; justify-content: flex-end;">
+                            <div onclick="deleteQuestion()" class="flat-button">HAPUS SOAL</div>
+                            <div onclick="cancelEditingQuestion()" class="flat-button">BATAL</div>
+                            <div id="edit-question-save" class="flat-button">SIMPAN</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONFIRM PASSWORD DIALOG -->
+        <div id="confirm-password-dialog-ctr"
+             style="width: 100%; height: 100%; margin: 0 auto; position: fixed; left: 0; top: 0; background-color: rgba(0, 0, 0, 0.8); display: none; justify-content: center; align-items: center;">
+            <div id="confirm-password-dialog"
+                 style="display: flex; flex-flow: row wrap; width: 500px; height: 230px; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);">
+                <div style="width: 100%; display: flex; justify-content: center; font-family: 'PalanquinBold', Arial; margin-top: 5px; font-size: 20px;">
+                    KONFIRMASI KATA SANDI
+                </div>
+                <div style="width: 100%; margin-top: 10px; display: flex; justify-content: center;">
+                    <div style="width: 50%; line-height: 20px; display: flex; justify-content: center; align-content: center; text-align: center;">
+                        Silahkan masukkan kata sandi Anda yang sekarang sebelum melanjutkan
+                    </div>
+                </div>
+                <div style="width: 100%; height: 215px;">
+                    <div style="margin-left: 20px;">Kata sandi:</div>
+                    <input class="input1" type="password" name="password" id="current-password">
+                    <div id="confirm-password-error" class="error" style="margin-top: 0; margin-left: 20px;">&nbsp;
+                    </div>
+                    <div style="width: 99%; margin-top: 5px; display: flex; justify-content: flex-end;">
+                        <div onclick="cancelConfirmingPassword()" class="flat-button">BATAL</div>
+                        <div id="confirm-password-process" class="flat-button">PROSES</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EDIT ADMIN DIALOG -->
+        <div id="edit-admin-dialog-ctr"
+             style="width: 100%; height: 100%; margin: 0 auto; position: fixed; left: 0; top: 0; background-color: rgba(0, 0, 0, 0.8); display: none; justify-content: center; align-items: center;">
+            <div id="edit-admin-dialog"
+                 style="display: flex; flex-flow: row wrap; width: 500px; height: 225px; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);">
+                <div style="width: 100%; display: flex; justify-content: center; font-family: 'PalanquinBold', Arial; margin-top: 5px; font-size: 20px;">
+                    EDIT KATA SANDI ADMIN
+                </div>
+                <div style="width: 100%; height: 215px;">
+                    <div style="margin-left: 20px;">Kata sandi:</div>
+                    <input class="input1" type="password" name="password" id="admin-password">
+                    <div id="edit-admin-error" class="error" style="margin-top: 0; margin-left: 20px;">&nbsp;</div>
+                    <button id="save-admin-password" class="blue-button"
+                            style="width: 91%; margin-left: 20px; margin-right: 20px; margin-top: 10px;">Simpan
+                    </button>
+                    <button id="delete-admin" class="red-button"
+                            style="width: 91%; margin-left: 20px; margin-right: 20px; margin-top: 10px;">Hapus Admin
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ADD ADMIN DIALOG -->
+        <div id="add-admin-dialog-ctr"
+             style="width: 100%; height: 100%; margin: 0 auto; position: fixed; left: 0; top: 0; background-color: rgba(0, 0, 0, 0.8); display: none; justify-content: center; align-items: center;">
+            <div id="add-admin-dialog"
+                 style="display: flex; flex-flow: row wrap; width: 500px; height: 225px; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);">
+                <div style="width: 100%; display: flex; justify-content: center; font-family: 'PalanquinBold', Arial; margin-top: 5px; font-size: 20px;">
+                    TAMBAH ADMIN
+                </div>
+                <div style="width: 100%; height: 215px;">
+                    <div style="margin-left: 20px;">Email:</div>
+                    <input class="input1" type="text" name="email" id="add-admin-email">
+                    <div style="margin-left: 20px;">Kata sandi:</div>
+                    <input class="input1" type="password" name="password" id="add-admin-password">
+                    <div id="add-admin-error" class="error" style="margin-top: 0; margin-left: 20px;">&nbsp;</div>
+                    <div style="width: 99%; margin-top: 5px; display: flex; justify-content: flex-end;">
+                        <div onclick="cancelAddingAdmin()" class="flat-button">BATAL</div>
+                        <div id="add-admin" class="flat-button">PROSES</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EDIT USER DIALOG -->
+        <div id="edit-user-dialog-ctr"
+             style="width: 100%; height: 100%; margin: 0 auto; position: fixed; left: 0; top: 0; background-color: rgba(0, 0, 0, 0.8); display: none; justify-content: center; align-items: center;">
+            <div id="edit-user-dialog"
+                 style="display: flex; flex-flow: row wrap; width: 500px; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);">
+                <div style="width: 100%; display: flex; justify-content: center; font-family: 'PalanquinBold', Arial; margin-top: 5px; font-size: 20px;">
+                    EDIT USER
+                </div>
+                <div style="width: 100%; height: 285px;">
+                    <div style="margin-left: 20px;">Nama:</div>
+                    <input class="input1" type="text" name="name" id="user-name">
+                    <div style="margin-left: 20px;">Kata sandi:</div>
+                    <input class="input1" type="password" name="password" id="user-password">
+                    <div style="margin-left: 20px;">Nomor Handphone:</div>
+                    <input class="input1" type="text" name="name" id="user-phone">
+                    <div id="edit-user-error" class="error" style="margin-top: 0; margin-left: 20px;">&nbsp;</div>
+                    <button id="save-user" class="blue-button"
+                            style="width: 91%; margin-left: 20px; margin-right: 20px; margin-top: 10px;">Simpan
+                    </button>
+                    <button id="delete-user" class="red-button"
+                            style="width: 91%; margin-left: 20px; margin-right: 20px; margin-top: 10px;">Hapus User
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ADD USER DIALOG -->
+        <div id="add-user-dialog-ctr"
+             style="width: 100%; height: 100%; margin: 0 auto; position: fixed; left: 0; top: 0; background-color: rgba(0, 0, 0, 0.8); display: none; justify-content: center; align-items: center;">
+            <div id="add-user-dialog"
+                 style="display: flex; flex-flow: row wrap; width: 500px; height: 355px; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);">
+                <div style="width: 100%; display: flex; justify-content: center; font-family: 'PalanquinBold', Arial; margin-top: 5px; font-size: 20px;">
+                    TAMBAH USER
+                </div>
+                <div style="width: 100%;">
+                    <div style="margin-left: 20px;">Nama:</div>
+                    <input class="input1" type="text" name="name" id="add-user-name">
+                    <div style="margin-left: 20px;">Email:</div>
+                    <input class="input1" type="text" name="email" id="add-user-email">
+                    <div style="margin-left: 20px;">Kata sandi:</div>
+                    <input class="input1" type="password" name="password" id="add-user-password">
+                    <div style="margin-left: 20px;">Phone No.:</div>
+                    <input class="input1" type="text" name="phone" id="add-user-phone">
+                    <div id="add-user-error" class="error" style="margin-top: 0; margin-left: 20px;">&nbsp;</div>
+                    <div style="width: 99%; margin-top: 5px; display: flex; justify-content: flex-end;">
+                        <div onclick="cancelAddingUser()" class="flat-button">BATAL</div>
+                        <div id="add-user" class="flat-button">TAMBAH</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROMPT DIALOG -->
+        <div id="prompt" style="display: none; width: 100%; height: 100%; position: fixed; left: 0; top: 0;">
+            <div style="width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); display: flex; justify-content: center; align-items: center;">
+                <div style="width: 500px; height: 130px; background-color: white; box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5); border: 0; border-radius: 10px;">
+                    <div id="prompt-title"
+                         style="margin-top: 10px; width: 100%; display: flex; justify-content: center; font-weight: bold; font-size: 18px;">
+                        &nbsp;
+                    </div>
+                    <div id="prompt-text" style="margin-left: 25px; margin-top: 10px; font-size: 15px;">&nbsp;</div>
+                    <div style="width: 100%; display: flex; justify-content: flex-end;">
+                        <div id="prompt-no" class="flat-button" style="font-size: 13px;">TIDAK</div>
+                        <div id="prompt-yes" class="flat-button" style="font-size: 13px;">YA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOADING ANIMATION -->
+    <div id="loading-container" style="position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; justify-content: center; align-items: center;">
+        <div style="width: 400px; height: 250px; background-color: #0dc5c1; border-radius: 5px; display: flex; justify-content: center; align-items: center; align-content: center; flex-flow: column nowrap; position: relative;">
+            <div class="loader"></div>
+            <div id="loading-message" style="text-align: center; width: 100%; display: flex; justify-content: center; margin-bottom: 20px; position: absolute; left: 0; bottom: 0; color: white; font-family: 'SegoeUILight', Arial; font-size: 19px;">&nbsp;</div>
+        </div>
+    </div>
+
+    <!-- EDIT COURSE -->
+    <div id="edit-course-container" style="position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; justify-content: center; align-items: center;">
+        <div style="display: flex; flex-flow: row wrap; width: 500px; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);">
+            <div style="width: 100%; display: flex; justify-content: center; font-family: 'PalanquinBold', Arial; margin-top: 5px; font-size: 20px;">
+                EDIT MATA KULIAH
+            </div>
+            <div style="width: 100%; height: 205px;">
+                <div style="margin-left: 20px;">Nama:</div>
+                <input class="input1" type="text" name="name" id="edit-course-name">
+                <div style="margin-left: 20px;">Nama pembimbing:</div>
+                <input class="input1" type="text" name="lecturer" id="edit-course-lecturer">
+                <div id="edit-course-error" class="error" style="margin-top: 0; margin-left: 20px;">&nbsp;</div>
+                <button onclick="saveEdittedCourse()" id="save-course" class="blue-button"
+                        style="width: 91%; margin-left: 20px; margin-right: 20px; margin-top: 10px;">Simpan
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- EDIT BAB -->
+    <div id="edit-bab-container" style="display: none; width: 100%; height: 100%; position: fixed; left: 0; top: 0;">
+        <div style="width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); display: flex; justify-content: center; align-items: center;">
+            <div style="width: 500px; height: 310px; background-color: white; box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5); border: 0; border-radius: 10px;">
+                <div style="margin-top: 10px; width: 100%; display: flex; justify-content: center; font-weight: bold; font-size: 18px;">Edit Bab</div>
+                <div style="margin-left: 25px; margin-top: 10px; font-size: 15px;">Masukkan nama bab yang baru:</div>
+                <input class="input1" type="text" name="bab-name" id="edit-bab-name">
+                <div style="margin-left: 25px; margin-top: 10px; font-size: 15px;">Masukkan lama waktu yang baru:</div>
+                <input class="input1" type="text" name="limit-time" id="edit-bab-time-limit">
+                <div style="margin-left: 25px; margin-top: 10px; font-size: 15px;">Masukkan kode akses yang baru:</div>
+                <input class="input1" type="text" name="access-code" id="edit-bab-access-code">
+                <div style="width: 100%; display: flex; justify-content: flex-end;">
+                    <div id="edit-bab-cancel" class="flat-button" style="font-size: 13px;">Batal</div>
+                    <div id="edit-bab-save" class="flat-button" style="font-size: 13px;">Ubah</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VIEW SCORE -->
+    <div id="view-score-container" style="display: none; justify-content: center; align-items: center; width: 100%; height: 100%; position: fixed; left: 0; top: 0; background-color: rgba(0, 0, 0, .5);">
+        <div style="width: 1000px; background-color: white; box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5); border: 0; border-radius: 10px;">
+            <div style="margin-top: 10px; width: 100%; display: flex; justify-content: center; font-weight: bold; font-size: 18px;">Lihat Skor</div>
+            <table id="scores">
+                <thead>
+                <tr id="score-titles">
+                    <th>
+                        <div style="width: 100%; display: flex; align-items: center; align-content: center;">
+                            <label style="margin-top: 10px; position: relative; user-select: none;">&nbsp;
+                                <input type="checkbox" onclick="return false;"
+                                       style="visibility: visible; position: absolute; width: 0; height: 0; opacity: 0;">
+                                <div class="check">&nbsp;</div>
+                                <div class="check-all">
+                                    <img src="img/check.png" width="12px" height="12px"
+                                         style="position: relative; left:2px; top:-6px;">
+                                </div>
+                            </label>
+                        </div>
+                    </th>
+                    <th>Mata Kuliah</th>
+                    <th>Bab</th>
+                    <th>Skor</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div style="width: 100%; display: flex; justify-content: flex-end; margin-bottom: 10px;">
+                <button onclick="$('#view-score-container').css('display', 'none');" class="flat-button">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

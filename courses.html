@@ -1,0 +1,72 @@
+<div class="courses-header">
+    <div style="font-family: 'PalanquinBold', Arial; font-size: 23px; margin-left: 25px; padding-top: 10px;">Daftar
+        Mata Kuliah
+    </div>
+    <div style="font-size: 13px; margin-left: 25px; margin-top: -7px;">Mengatur daftar mata kuliah beserta
+        pembimbingnya
+    </div>
+    <div style="width: 100%; height: 100%; position: absolute; top: 0; right: 0; display: flex; align-items: center; justify-content: flex-end;">
+        <!--<img width="15px" height="15px" style="margin-right: 5px;" id="options" src="img/options.png">
+        <div style="margin-right: 10px;" id="name">Sistem</div>-->
+        <img class="profile-picture" src="img/profile_picture.png" width="40px" height="40px" style="cursor: pointer; margin-right: 25px;">
+    </div>
+    <div class="account-panel">
+        <div id="account-email"><div style="font-family: 'PalanquinBold', Arial; line-height: 14px;">Email:</div>ligaligo12346@gmail.com</div>
+        <div style="position: absolute; right: 0;">
+            <div class="log-out flat-button">LOGOUT</div>
+        </div>
+    </div>
+</div>
+<div class="card"
+     style="position: relative; margin-left: 20px; margin-top: 20px; margin-bottom: 20px; margin-right: 20px; min-height: 300px;">
+    <div id="title" style="width: 100%; padding-left: 20px; padding-top: 10px; padding-bottom: 10px;">
+        <div style="font-family: 'PalanquinBold', Arial; font-size: 16px;">Daftar Kategori</div>
+    </div>
+    <div style="width: 100%; position: absolute; top: 0; left: 0; display: flex; justify-content: flex-end;">
+        <div onclick="uploadCourses()" id="upload-btn" class="flat-button" style="">
+            <img src="img/upload.png" width="20px" height="20px" style="margin-right: 5px;">
+            RESTORE
+        </div>
+        <input style="width: 0; height: 0; opacity: 0;" id="open-upload-dialog" type="file" name="uploadedFile">
+        <div onclick="backupCourses()" id="backup-btn" class="flat-button" style="">
+            <img src="img/backup.png" width="20px" height="20px" style="margin-right: 5px;">
+            CADANGKAN
+        </div>
+        <a id="save-courses" href="courses.json" download></a>
+        <div id="delete-course-btn" class="flat-button" style="display: none;">
+            <img src="img/delete.png" width="20px" height="20px" style="margin-right: 5px;">
+            HAPUS
+        </div>
+    </div>
+    <div class="separator" style="margin-top: 10px;">&nbsp;</div>
+    <table id="courses">
+        <thead>
+        <tr id="titles">
+            <th>
+                <div style="width: 100%; height: 100%; display: flex; align-items: center; align-content: center;">
+                    <label style="margin-top: 10px; position: relative; user-select: none;">&nbsp;
+                        <input type="checkbox" onclick="return false;"
+                               style="visibility: visible; position: absolute; width: 0; height: 0; opacity: 0;">
+                        <div class="check">&nbsp;</div>
+                        <div class="check-all">
+                            <img src="img/check.png" width="12px" height="12px"
+                                 style="position: relative; left:2px; top:-6px;">
+                        </div>
+                    </label>
+                </div>
+            </th>
+            <th>Nama</th>
+            <th>Nama Pembimbing</th>
+            <th>Hapus</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <div style="width: 100%; display: flex; justify-content: flex-end;">
+        <div onclick="addCourse(); return false;" style="margin-bottom: 10px;" class="flat-button">
+            TAMBAH
+        </div>
+    </div>
+</div>

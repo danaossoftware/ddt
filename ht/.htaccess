@@ -1,0 +1,6 @@
+AuthName "Admin Page"
+AuthType Basic
+AuthUserFile .htpasswd
+RewriteEngine on
+RewriteRule ^scripts/(.*) accessprotected.php?url=$1
+require valid-user
